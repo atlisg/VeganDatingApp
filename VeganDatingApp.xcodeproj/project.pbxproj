@@ -13,6 +13,8 @@
 		E03D2B7327FF77FC002B00D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03D2B7127FF77FC002B00D1 /* Main.storyboard */; };
 		E03D2B7527FF77FD002B00D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03D2B7427FF77FD002B00D1 /* Assets.xcassets */; };
 		E03D2B7827FF77FD002B00D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03D2B7627FF77FD002B00D1 /* LaunchScreen.storyboard */; };
+		E03D2B8027FF7C2C002B00D1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D2B7F27FF7C2C002B00D1 /* Models.swift */; };
+		E03D2B8227FF8DA3002B00D1 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03D2B8127FF8DA3002B00D1 /* UserListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E03D2B7427FF77FD002B00D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E03D2B7727FF77FD002B00D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E03D2B7927FF77FD002B00D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E03D2B7F27FF7C2C002B00D1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E03D2B8127FF8DA3002B00D1 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				E03D2B6B27FF77FC002B00D1 /* AppDelegate.swift */,
 				E03D2B6D27FF77FC002B00D1 /* SceneDelegate.swift */,
 				E03D2B6F27FF77FC002B00D1 /* ViewController.swift */,
+				E03D2B8127FF8DA3002B00D1 /* UserListViewController.swift */,
 				E03D2B7127FF77FC002B00D1 /* Main.storyboard */,
 				E03D2B7427FF77FD002B00D1 /* Assets.xcassets */,
 				E03D2B7627FF77FD002B00D1 /* LaunchScreen.storyboard */,
 				E03D2B7927FF77FD002B00D1 /* Info.plist */,
+				E03D2B7F27FF7C2C002B00D1 /* Models.swift */,
 			);
 			path = VeganDatingApp;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03D2B8227FF8DA3002B00D1 /* UserListViewController.swift in Sources */,
 				E03D2B7027FF77FC002B00D1 /* ViewController.swift in Sources */,
 				E03D2B6C27FF77FC002B00D1 /* AppDelegate.swift in Sources */,
 				E03D2B6E27FF77FC002B00D1 /* SceneDelegate.swift in Sources */,
+				E03D2B8027FF7C2C002B00D1 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
