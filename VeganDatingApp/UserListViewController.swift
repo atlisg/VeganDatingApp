@@ -7,12 +7,16 @@
 
 import UIKit
 
-class UserListViewController: UIViewController {
+class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    let tableView = UITableView()
+    var users: [User]
 
     private let token: String
     
     init(token: String) {
         self.token = token
+        self.users = []
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,13 +26,35 @@ class UserListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.addSubview(tableView)
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.backgroundColor = .white
         
         fetchUsers { (userData) in
-            let users = userData.data.users
+            self.users = userData.data.users
             print("users:")
-            print(users)
+            print(self.users)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath)
+        cell.textLabel?.text = users[indexPath.row].name
+        return cell
     }
     
     func fetchUsers(completionHandler: @escaping (UserResponse) -> Void) {
